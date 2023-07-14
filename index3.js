@@ -45,7 +45,7 @@ function displaycard(){
     console.log(data[i].title)
     child += `<div id="${data[i].id}" class="card">
     
-    <div value="${data[i].title}" onclick ="displayMyCard(${data[i].id}, this.getAttribute('value'))" class="text1">${data[i].title}</div> 
+    <div value="${data[i].title}" onclick ="singleCardDetail(${data[i].id}, this.getAttribute('value'))" class="text1">${data[i].title}</div> 
         <hr>
         <ul id="content_list_${data[i].id}">
 
@@ -160,9 +160,12 @@ if(!inputtext){
   }
 
 
-  function displayMyCard(id, value){
+  function singleCardDetail(id, value){
     const addbtn1 = document.querySelector('.button1'); 
     addbtn1.style.display = "block";
+
+    const container1= document.querySelector(".cardcontainer");
+    
   
     const cardHeading = document.querySelector('.cardHeading');
     cardHeading.innerHTML = value;
@@ -170,21 +173,23 @@ if(!inputtext){
     const cards = document.querySelectorAll('.card')
     cards.forEach(allcards => {
         allcards.style.display ='none';
+        container1.style.justifyContent="center";
     });
     const cardToShow = document.getElementById(id);
     cardToShow.style.display = 'block';
-    cardToShow.style.marginLeft="450px";
+    // cardToShow.style.marginLeft="450px";
 
     const navBar = document.querySelector('.head')
     navBar.style.display = 'none';
 
     const backButton = document.querySelector('.back')
     backButton.style.display = 'block';
+
     
 }
 
 
-function openPage1(){
+function backButton(){
   
     const cards = document.querySelectorAll('.card');
     const cardHeading = document.querySelector('.cardHeading');
@@ -194,6 +199,7 @@ function openPage1(){
    cardHeading.innerHTML = "";
     cards.forEach(allcards => {
         allcards.style.display ='block';
+        container1.style.justifyContent="space-between";
     });
     const navBar = document.querySelector('.head')
     navBar.style.display = 'flex'

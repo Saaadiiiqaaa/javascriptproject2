@@ -272,6 +272,9 @@ ul{
         margin-right: 5px;
         justify-content: centers;
         margin-left: 20px;
+        margin-top: -60px;
+
+
     }
     .back{
         left:1rem;
@@ -292,7 +295,10 @@ ul{
         margin-left: 0px;
     }
     .cardHeading{
-        padding-top: 1rem;
+        bottom: 30px;
+        /* padding-top: 1rem; */
+        /* margin-top: 100px; */
+        position: relative;
     }
     .back{
         /* top:0px; */
