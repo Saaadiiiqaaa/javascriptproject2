@@ -55,9 +55,11 @@ function displaycard(){
         <Button onclick="additemstocardpopup(${data[i].id})" class="add">+</Button>
         </div>
         </div>`;
+        
   }
   container1.innerHTML=child;
   renderContents();
+  container1.style.justifyContent="space-between";
   console.log(data)
 
 }
